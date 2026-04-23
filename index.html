@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="GSpaRC: Gaussian Splatting for Real-time Reconstruction of RF Channels.">
+  <meta name="keywords" content="Gaussian Splatting, RF, Wireless, 5G, 6G, CSI, Channel Reconstruction">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GSpaRC: Gaussian Splatting for Real-time Reconstruction of RF Channels</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+
+<body>
+
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+    <div class="navbar-menu">
+      <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+
+      </div>
+
+    </div>
+  </nav>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">GSpaRC: Gaussian Splatting for Real-time Reconstruction of RF
+              Channels</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="#">Bhavya Sai Nukapotula</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="#">Rishabh Tripathi</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="#">Seth Pregler</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://people.tamu.edu/~dileep.kalathil/">Dileep Kalathil</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://cesg.tamu.edu/faculty/srinivas-shakkottai/">Srinivas Shakkottai</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://wireless.engineering.nyu.edu/tedrappaport/">Tedd Rappaport</a><sup>2</sup>
+              </span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>Texas A&M University,</span>
+              <span class="author-block"><sup>2</sup>New York University</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/pdf/2511.22793.pdf" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2511.22793" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a href="https://github.com/Nbhavyasai/GSpaRC-WirelessGaussianSplatting.git"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+                <!-- Dataset Link. -->
+                <span class="link-block">
+                  <a href="#" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="far fa-images"></i>
+                    </span>
+                    <span>Data</span>
+                  </a>
+                </span>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <img src="./static/images/teaser.png" alt="GSpaRC Teaser"
+          style="width: 70%; height: auto; display: block; margin: 0 auto;">
+        <h2 class="subtitle has-text-centered">
+          GSpaRC represents the RF environment using a compact set of 3D Gaussian primitives,
+          achieving low-millisecond latency for channel reconstruction.
+        </h2>
+      </div>
+    </div>
+  </section>
+
+
+  <!--/ Abstract. -->
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Channel state information (CSI) is essential for adaptive beamforming and maintaining robust links in
+              wireless communication systems. However, acquiring CSI incurs significant overhead, consuming up to 25% of
+              spectrum resources in 5G networks due to frequent pilot transmissions at millisecond-scale intervals.
+              Recent approaches aim to reduce this burden by reconstructing CSI from spatiotemporal RF measurements,
+              such as signal strength and direction-of-arrival. While effective in offline settings, these methods often
+              suffer from inference latencies in the 5-100 ms range, making them impractical for real-time systems. We
+              present GSpaRC: Gaussian Splatting for Real-time Reconstruction of RF Channels, a method that achieves
+              accurate channel reconstruction with latency in the low-millisecond regime or below. GSpaRC represents the
+              RF environment using a compact set of 3D Gaussian primitives, each parameterized by a lightweight neural
+              model augmented with physics-informed features such as distance-based attenuation. Unlike traditional
+              vision-based splatting pipelines, GSpaRC is tailored for RF reception: it employs an equirectangular
+              projection onto a hemispherical surface centered at the receiver to reflect omnidirectional antenna
+              behavior. A custom CUDA pipeline enables fully parallelized directional sorting, splatting, and rendering
+              across frequency and spatial dimensions. Evaluated on multiple RF datasets, GSpaRC achieves similar CSI
+              reconstruction fidelity to recent state-of-the-art methods while reducing training and inference time by
+              over an order of magnitude. These results illustrate that modest GPU computation can substantially reduce
+              pilot overhead, making GSpaRC a scalable low-latency approach for channel estimation in 5G and future
+              wireless systems.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--/ Abstract. -->
+
+      <!-- Pipeline. -->
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Pipeline</h2>
+          <div class="publication-image has-text-centered">
+            <img src="./static/images/pipeline.png" alt="GSpaRC Pipeline" style="width: 100%; height: auto;">
+          </div>
+          <div class="content has-text-justified">
+            <p>
+              Overview of the GSpaRC pipeline. Anisotropic 3D Gaussians are splatted at the receiver position; each
+              Gaussian's complex emission is predicted by a lightweight MLP. The transmitter position is constant, so
+              the MLP is conditioned on the receiver position. The rasterizer accumulates contributions into a
+              directional spectrum, supervised against ground-truth measurements during training.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--/ Pipeline. -->
+
+      <!-- Results. -->
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Confidence-Aware Reconstruction</h2>
+          <div class="publication-image has-text-centered">
+            <img src="./static/images/confidence.png" alt="Confidence Analysis" style="width: 100%; height: auto;">
+          </div>
+          <div class="content has-text-justified">
+            <p>
+              Example confidence distribution and pilot-free coverage on the Argos dataset. (a) Positions with high
+              confidence predicted by GSpaRC require no pilot transmission. (b) Coverage curve showing pilot-free
+              fraction vs. confidence threshold. GSpaRC identifies the approx 70% of receiver positions that exceed the
+              accuracy threshold for downstream tasks.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--/ Results. -->
+
+
+      <!-- Sionna Section. -->
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Sionna Simulation and Dataset</h2>
+          <div class="content has-text-justified">
+            <p>
+              To evaluate GSpaRC in a controlled yet realistic propagation environment, we generate an indoor dataset using the Sionna ray tracer. We use a conference room scene spanning 14m x 10m with a 4m ceiling, including tables, chairs, glass partitions, and irregular wall materials that create rich multipath propagation.
+            </p>
+          </div>
+          
+          <div class="publication-image has-text-centered">
+            <img src="./static/images/scene1.png" alt="Sionna Conference Room Scene" style="width: 80%; height: auto;">
+            <p class="is-size-6">Figure 4: Conference room scene used for Sionna ray-tracing.</p>
+          </div>
+
+          <h3 class="title is-4">Quantitative Comparison</h3>
+          <div class="content has-text-justified">
+            <p>
+              The following tables present a comparison of GSpaRC with baseline methods (NeRF², WRFGS+, and GSRF) across the Sionna and RFID datasets. GSpaRC consistently achieves superior reconstruction quality and significantly faster rendering times.
+            </p>
+          </div>
+
+          <div class="columns is-centered">
+            <div class="column is-half">
+              <h4 class="title is-5 has-text-centered">Table 3: Sionna Conference Room</h4>
+              <table class="table is-fullwidth is-striped is-narrow">
+                <thead>
+                  <tr>
+                    <th>Algorithm</th>
+                    <th>SSIM ↑</th>
+                    <th>MSE ↓</th>
+                    <th>Train (hrs)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>NeRF²</td><td>0.69</td><td>0.00513</td><td>4.15</td></tr>
+                  <tr><td>WRFGS+</td><td>0.71</td><td>0.00550</td><td>3.67</td></tr>
+                  <tr><td>GSRF</td><td>0.70</td><td>0.00512</td><td>1.1</td></tr>
+                  <tr class="is-selected"><td><strong>GSpaRC</strong></td><td><strong>0.78</strong></td><td><strong>0.00417</strong></td><td><strong>1.0</strong></td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="column is-half">
+              <h4 class="title is-5 has-text-centered">Table 4: RFID Dataset</h4>
+              <table class="table is-fullwidth is-striped is-narrow">
+                <thead>
+                  <tr>
+                    <th>Algorithm</th>
+                    <th>SSIM ↑</th>
+                    <th>MSE ↓</th>
+                    <th>Render (ms)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>WRFGS+</td><td>0.78</td><td>0.0112</td><td>8</td></tr>
+                  <tr><td>NeRF²</td><td>0.75</td><td>0.0101</td><td>230</td></tr>
+                  <tr><td>GSRF</td><td>0.82</td><td>0.0094</td><td>23</td></tr>
+                  <tr class="is-selected"><td><strong>GSpaRC</strong></td><td><strong>0.82</strong></td><td><strong>0.0134</strong></td><td><strong>0.8</strong></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <h3 class="title is-4">Qualitative Results</h3>
+          <div class="content has-text-centered">
+            <img src="./static/images/spectrum_comparison.png" alt="Spectrum Comparison" style="width: 100%; height: auto;">
+            <p class="is-size-6">Figure 5: Qualitative spectrum reconstruction on the Sionna dataset. Left to right: ground truth, GSpaRC prediction, and GSRF prediction.</p>
+          </div>
+        </div>
+      </div>
+      <!--/ Sionna Section. -->
+
+
+      <!-- Downstream Tasks. -->
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Downstream Tasks</h2>
+          <div class="content has-text-justified">
+            <p>
+              We evaluate the utility of GSpaRC-predicted CSI for real-time communication tasks using the real-world 
+              <strong>Argos CSI dataset</strong>. These downstream evaluations demonstrate that our confidence-aware 
+              approach can effectively replace pilot-based estimation in practical wireless systems.
+            </p>
+          </div>
+
+          <h3 class="title is-4">Confidence-Aware Link Adaptation</h3>
+          <div class="content has-text-justified">
+            <p>
+              Our spatially grounded representation supports real-time link adaptation. By predicting channel quality
+              across receiver locations, GSpaRC enables effective Modulation and Coding Scheme (MCS) selection,
+              achieving throughput nearly identical to that obtained with ground-truth CSI.
+            </p>
+          </div>
+          <div class="columns is-centered">
+            <div class="column is-6 has-text-centered">
+              <img src="./static/images/mcs_selection.png" alt="MCS Selection Error" style="width: 100%; height: auto;">
+              <p class="is-size-6">MCS Selection Error Distribution</p>
+            </div>
+            <div class="column is-6 has-text-centered">
+              <img src="./static/images/link_adaptation.png" alt="Link Adaptation Throughput"
+                style="width: 100%; height: auto;">
+              <p class="is-size-6">Effective Throughput CDF</p>
+            </div>
+          </div>
+
+          <h3 class="title is-4">Confidence-Aware Communication</h3>
+          <div class="content has-text-justified">
+            <p>
+              GSpaRC-reconstructed channels enable accurate symbol detection. We evaluate Bit Error Rate (BER) and Block
+              Error Rate (BLER) across different signal-to-noise ratios, demonstrating that our real-time reconstruction
+              matches the performance of perfect CSI in practical regimes.
+            </p>
+          </div>
+          <div class="content has-text-centered">
+            <img src="./static/images/comms_poc.png" alt="PoC for Communications" style="width: 80%; height: auto;">
+          </div>
+        </div>
+      </div>
+      <!--/ Downstream Tasks. -->
+
+    </div>
+  </section>
+
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@article{nukapotula2026gsparc,
+  title     = {GSpaRC: Gaussian Splatting for Real-time Reconstruction of RF Channels},
+  author    = {Nukapotula, Bhavya Sai and Tripathi, Rishabh and Pregler, Seth and Kalathil, Dileep and Shakkottai, Srinivas and Rappaport, Tedd},
+  journal   = {arXiv preprint arXiv:2511.22793},
+  year      = {2026},
+}</code></pre>
+      <!-- MobiHoc Citation (Commented out until accepted)
+      @inproceedings{nukapotula2026gsparc,
+        author    = {Nukapotula, Bhavya Sai and Tripathi, Rishabh and Pregler, Seth and Kalathil, Dileep and Shakkottai, Srinivas and Rappaport, Tedd},
+        title     = {GSpaRC: Gaussian Splatting for Real-time Reconstruction of RF Channels},
+        booktitle = {ACM International Symposium on Theory, Algorithmic Foundations, and Protocol Design for Mobile Networks and Mobile Computing (MobiHoc)},
+        year      = {2026},
+      }
+      -->
+    </div>
+  </section>
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <a class="icon-link" href="https://arxiv.org/pdf/2511.22793.pdf">
+          <i class="fas fa-file-pdf"></i>
+        </a>
+        <a class="icon-link" href="https://github.com/Nbhavyasai" class="external-link">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This website is licensed under a <a rel="license"
+                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+            <p>
+              This website is adapted from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
