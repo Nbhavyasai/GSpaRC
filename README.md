@@ -1,6 +1,6 @@
 # GSpaRC
 
-This is the repository that contains source code for the [GSpaRC website](https://gsparc.github.io).
+This is the repository that contains source code for the [GSpaRC website](https://nbhavyasai.github.io/GSpaRC/).
 
 If you find GSpaRC useful for your work please cite:
 ```
