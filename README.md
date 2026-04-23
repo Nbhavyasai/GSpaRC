@@ -1,14 +1,14 @@
-# Nerfies
+# GSpaRC
 
-This is the repository that contains source code for the [Nerfies website](https://nerfies.github.io).
+This is the repository that contains source code for the [GSpaRC website](https://gsparc.github.io).
 
-If you find Nerfies useful for your work please cite:
+If you find GSpaRC useful for your work please cite:
 ```
-@article{park2021nerfies
-  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
-  title     = {Nerfies: Deformable Neural Radiance Fields},
-  journal   = {ICCV},
-  year      = {2021},
+@article{nukapotula2026gsparc,
+  title     = {GSpaRC: Gaussian Splatting for Real-time Reconstruction of RF Channels},
+  author    = {Nukapotula, Bhavya Sai and Tripathi, Rishabh and Pregler, Seth and Kalathil, Dileep and Shakkottai, Srinivas and Rappaport, Tedd},
+  journal   = {arXiv preprint arXiv:2511.22793},
+  year      = {2026},
 }
 ```
 
