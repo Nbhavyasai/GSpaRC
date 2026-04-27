@@ -120,11 +120,11 @@
                 </span>
                 <!-- Dataset Link. -->
                 <span class="link-block">
-                  <a href="#" class="external-link button is-normal is-rounded is-dark">
+                  <a href="#" class="external-link button is-normal is-rounded is-dark is-disabled" style="opacity: 0.65; pointer-events: none;">
                     <span class="icon">
                       <i class="far fa-images"></i>
                     </span>
-                    <span>Data</span>
+                    <span>Data (coming soon)</span>
                   </a>
                 </span>
               </div>
@@ -224,31 +224,41 @@
       <!--/ Results. -->
 
 
-      <!-- Sionna Section. -->
+      <!-- Datasets and Results Section. -->
       <div class="columns is-centered">
         <div class="column is-full-width">
-          <h2 class="title is-3">Sionna Simulation and Dataset</h2>
+          <h2 class="title is-3">Datasets and Results</h2>
+          <div class="content has-text-justified">
+            <p>
+              We evaluate GSpaRC on three datasets covering both spectrum and CSI reconstruction:
+              (1) a <strong>Sionna</strong> ray-traced indoor scene, (2) the real-world <strong>RFID</strong> spectrum dataset,
+              and (3) the real-world <strong>Argos</strong> massive-MIMO CSI dataset. Across all three, GSpaRC matches or
+              exceeds prior state-of-the-art reconstruction quality while reducing inference time by over an order of magnitude.
+            </p>
+          </div>
+
+          <!-- Sionna Dataset -->
+          <h3 class="title is-4">1. Sionna Simulation Dataset</h3>
           <div class="content has-text-justified">
             <p>
               To evaluate GSpaRC in a controlled yet realistic propagation environment, we generate an indoor dataset using the Sionna ray tracer. We use a conference room scene spanning 14m x 10m with a 4m ceiling, including tables, chairs, glass partitions, and irregular wall materials that create rich multipath propagation.
             </p>
           </div>
-          
-          <div class="publication-image has-text-centered">
-            <img src="./static/images/scene1.png" alt="Sionna Conference Room Scene" style="width: 80%; height: auto;">
-            <p class="is-size-6">Conference room scene used for Sionna ray-tracing.</p>
-          </div>
 
-          <h3 class="title is-4">Quantitative Comparison</h3>
-          <div class="content has-text-justified">
-            <p>
-              The following tables present a comparison of GSpaRC with baseline methods (NeRF², WRFGS+, and GSRF) across the Sionna and RFID datasets. GSpaRC consistently achieves superior reconstruction quality and significantly faster rendering times.
-            </p>
+          <div class="columns is-vcentered">
+            <div class="column is-half has-text-centered">
+              <img src="./static/images/scene1.png" alt="Sionna Conference Room Scene" style="width: 100%; height: auto;">
+              <p class="is-size-6">(a) Conference room scene used for Sionna ray-tracing.</p>
+            </div>
+            <div class="column is-half has-text-centered">
+              <img src="./static/images/spectrum_comparison.png" alt="Spectrum Comparison" style="width: 100%; height: auto;">
+              <p class="is-size-6">(b) Spectrum reconstruction. Left to right: ground truth, GSpaRC, and GSRF.</p>
+            </div>
           </div>
 
           <div class="columns is-centered">
-            <div class="column is-half">
-              <h4 class="title is-5 has-text-centered">Table 3: Sionna Conference Room</h4>
+            <div class="column is-8 is-offset-2">
+              <h4 class="title is-5 has-text-centered">Sionna Conference Room</h4>
               <table class="table is-fullwidth is-striped is-narrow">
                 <thead>
                   <tr>
@@ -266,15 +276,26 @@
                 </tbody>
               </table>
             </div>
-            <div class="column is-half">
-              <h4 class="title is-5 has-text-centered">Table 4: RFID Dataset</h4>
+          </div>
+
+          <!-- RFID Dataset -->
+          <h3 class="title is-4">2. RFID Spectrum Dataset</h3>
+          <div class="content has-text-justified">
+            <p>
+              We evaluate GSpaRC on the publicly available RFID Spectrum NeRF² dataset. The receiver is fixed at 915 MHz with a 4×4 antenna array, and an RFID tag transmitter is placed at 6,123 distinct locations, each yielding a spatial spectrum image. GSpaRC matches the best baseline in SSIM while delivering more than 20× faster rendering.
+            </p>
+          </div>
+
+          <div class="columns is-centered">
+            <div class="column is-8 is-offset-2">
+              <h4 class="title is-5 has-text-centered">RFID Dataset</h4>
               <table class="table is-fullwidth is-striped is-narrow">
                 <thead>
                   <tr>
                     <th>Algorithm</th>
                     <th>SSIM ↑</th>
                     <th>MSE ↓</th>
-                    <th>Render (ms)</th>
+                    <th>Render (ms) ↓</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -287,14 +308,37 @@
             </div>
           </div>
 
-          <h3 class="title is-4">Qualitative Results</h3>
-          <div class="content has-text-centered">
-            <img src="./static/images/spectrum_comparison.png" alt="Spectrum Comparison" style="width: 60%; height: auto;">
-            <p class="is-size-6">Qualitative spectrum reconstruction on the Sionna dataset. Left to right: ground truth, GSpaRC prediction, and GSRF prediction.</p>
+          <!-- Argos Dataset -->
+          <h3 class="title is-4">3. Argos Massive-MIMO CSI Dataset</h3>
+          <div class="content has-text-justified">
+            <p>
+              Beyond spectrum reconstruction, GSpaRC predicts complex-valued CSI at unseen receiver positions. We evaluate this on the real-world Argos massive-MIMO dataset, an outdoor deployment with a 64-antenna base station at 2.4 GHz across 4,000 user positions. GSpaRC achieves SNR comparable to GSRF while reducing rendering latency by nearly 6×.
+            </p>
+          </div>
+
+          <div class="columns is-centered">
+            <div class="column is-8 is-offset-2">
+              <h4 class="title is-5 has-text-centered">Argos Dataset (CSI Reconstruction, antenna 0, 800 test samples)</h4>
+              <table class="table is-fullwidth is-striped is-narrow">
+                <thead>
+                  <tr>
+                    <th>Method</th>
+                    <th>SNR 1-SC (dB) ↑</th>
+                    <th>SNR 26-SCs (dB) ↑</th>
+                    <th>NMSE ↓</th>
+                    <th>Render (ms) ↓</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>GSRF</td><td>23.62</td><td>20.87</td><td>0.0247</td><td>22.76</td></tr>
+                  <tr class="is-selected"><td><strong>GSpaRC</strong></td><td><strong>23.52</strong></td><td><strong>19.59</strong></td><td><strong>0.0110</strong></td><td><strong>3.86</strong></td></tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>
-      <!--/ Sionna Section. -->
+      <!--/ Datasets and Results Section. -->
 
 
       <!-- Downstream Tasks. -->
